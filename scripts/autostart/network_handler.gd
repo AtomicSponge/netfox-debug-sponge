@@ -20,3 +20,4 @@ func start_client() -> void:
 ##  Close network connection
 func close_connection() -> void:
 		multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
+		#multiplayer.multiplayer_peer.close()
