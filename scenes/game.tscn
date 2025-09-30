@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://w7ppkuj2u8xf"]
+
+[ext_resource type="Script" uid="uid://h06b0folvp5a" path="res://scripts/game.gd" id="1_yqjtg"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_yqjtg")
+
+[node name="Level" type="Node" parent="."]
+
+[node name="LevelSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://tauj6umdt5sc")
+spawn_path = NodePath("../Level")
+spawn_limit = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HostButton" type="Button" parent="UI"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Start Host"
+
+[node name="ClientButton" type="Button" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_bottom = 31.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+text = "Start Client"
+
+[node name="DisconnectButton" type="Button" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Disconnect"
+
+[connection signal="pressed" from="UI/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="UI/ClientButton" to="." method="_on_client_button_pressed"]
+[connection signal="pressed" from="UI/DisconnectButton" to="." method="_on_disconnect_button_pressed"]

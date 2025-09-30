@@ -1,0 +1,155 @@
+[gd_scene load_steps=10 format=3 uid="uid://tauj6umdt5sc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83ld5"]
+radius = 121.062
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6ivy"]
+radius = 120.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4tcl0"]
+radius = 118.929
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dd0lh"]
+radius = 121.062
+
+[sub_resource type="Curve2D" id="Curve2D_83ld5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -744, 960, 0, 0, 0, 0, 2032, 960)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jedrf"]
+size = Vector2(1349, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
+size = Vector2(491, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83ld5"]
+size = Vector2(64, 2560)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6ivy"]
+size = Vector2(4474, 66)
+
+[node name="Level1" type="Node2D"]
+
+[node name="BGColor" type="ColorRect" parent="."]
+offset_left = -1528.0
+offset_top = -968.0
+offset_right = 2808.0
+offset_bottom = 1528.0
+color = Color(0, 0.341176, 0, 1)
+
+[node name="PlayerSpawners" type="Node" parent="."]
+
+[node name="PlayerSpawn1" type="Area2D" parent="PlayerSpawners"]
+position = Vector2(320, -200)
+metadata/_edit_group_ = true
+
+[node name="SpawnArea" type="CollisionShape2D" parent="PlayerSpawners/PlayerSpawn1"]
+shape = SubResource("CircleShape2D_83ld5")
+
+[node name="PlayerSpawn2" type="Area2D" parent="PlayerSpawners"]
+position = Vector2(896, -200)
+metadata/_edit_group_ = true
+
+[node name="SpawnArea" type="CollisionShape2D" parent="PlayerSpawners/PlayerSpawn2"]
+shape = SubResource("CircleShape2D_x6ivy")
+
+[node name="PlayerSpawn3" type="Area2D" parent="PlayerSpawners"]
+position = Vector2(320, -576)
+metadata/_edit_group_ = true
+
+[node name="SpawnArea" type="CollisionShape2D" parent="PlayerSpawners/PlayerSpawn3"]
+shape = SubResource("CircleShape2D_4tcl0")
+
+[node name="PlayerSpawn4" type="Area2D" parent="PlayerSpawners"]
+position = Vector2(896, -576)
+metadata/_edit_group_ = true
+
+[node name="SpawnArea" type="CollisionShape2D" parent="PlayerSpawners/PlayerSpawn4"]
+shape = SubResource("CircleShape2D_dd0lh")
+
+[node name="EnemySpawners" type="Node" parent="."]
+
+[node name="EnemySpawn1" type="Path2D" parent="EnemySpawners"]
+position = Vector2(-8, 144)
+curve = SubResource("Curve2D_83ld5")
+
+[node name="SpawnLocation1" type="PathFollow2D" parent="EnemySpawners/EnemySpawn1"]
+position = Vector2(-744, 960)
+
+[node name="WallA" type="StaticBody2D" parent="."]
+position = Vector2(-48, 688)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallA"]
+position = Vector2(690, 12)
+shape = SubResource("RectangleShape2D_jedrf")
+
+[node name="ColorRect" type="ColorRect" parent="WallA"]
+offset_left = 17.0
+offset_top = -3.0
+offset_right = 1364.0
+offset_bottom = 27.0
+color = Color(0, 0, 0, 1)
+
+[node name="WallB" type="StaticBody2D" parent="."]
+position = Vector2(-311, -2)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallB"]
+position = Vector2(245, 14)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="ColorRect" type="ColorRect" parent="WallB"]
+offset_left = -3.0
+offset_right = 492.0
+offset_bottom = 28.0
+color = Color(0, 0, 0, 1)
+
+[node name="WallC" type="StaticBody2D" parent="."]
+position = Vector2(1083, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallC"]
+position = Vector2(262, 18)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="ColorRect" type="ColorRect" parent="WallC"]
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 504.0
+offset_bottom = 33.0
+color = Color(0, 0, 0, 1)
+
+[node name="ArenaWallLeft" type="StaticBody2D" parent="."]
+position = Vector2(-1608, -968)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaWallLeft"]
+position = Vector2(40, 1280)
+shape = SubResource("RectangleShape2D_83ld5")
+
+[node name="ArenaWallRight" type="StaticBody2D" parent="."]
+position = Vector2(2808, -960)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaWallRight"]
+position = Vector2(40, 1280)
+shape = SubResource("RectangleShape2D_83ld5")
+
+[node name="ArenaWallTop" type="StaticBody2D" parent="."]
+position = Vector2(-1592, -1024)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaWallTop"]
+position = Vector2(2227, 23)
+shape = SubResource("RectangleShape2D_x6ivy")
+
+[node name="ArenaWallBottom" type="StaticBody2D" parent="."]
+position = Vector2(-1592, 1544)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaWallBottom"]
+position = Vector2(2227, 23)
+shape = SubResource("RectangleShape2D_x6ivy")
