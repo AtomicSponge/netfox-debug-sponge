@@ -19,5 +19,7 @@ func start_client() -> void:
 
 ##  Close network connection
 func close_connection() -> void:
+		#  This line works fine for hosting
 		multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
+		#  Uncomment above and use this line for the original error
 		#multiplayer.multiplayer_peer.close()
