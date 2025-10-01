@@ -19,7 +19,6 @@ config/icon="uid://c1gne6drf2eul"
 [autoload]
 
 NetworkHandler="*res://scripts/autostart/network_handler.gd"
-EventBus="*res://scripts/autostart/event_bus.gd"
 NetworkTime="*res://addons/netfox/network-time.gd"
 NetworkTimeSynchronizer="*res://addons/netfox/network-time-synchronizer.gd"
 NetworkRollback="*res://addons/netfox/rollback/network-rollback.gd"

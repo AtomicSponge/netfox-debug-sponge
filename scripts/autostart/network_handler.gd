@@ -8,14 +8,12 @@ func start_server() -> void:
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(PORT, 4)
 	multiplayer.multiplayer_peer = peer
-	EventBus.StartGame.emit()
 
 ##  Start the multiplayer client and trigger a new game
 func start_client() -> void:
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(IP_ADDRESS, PORT)
 	multiplayer.multiplayer_peer = peer
-	EventBus.StartGame.emit()
 
 ##  Close network connection
 func close_connection() -> void:
